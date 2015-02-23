@@ -30,7 +30,7 @@ out <- ddply(traindf, "subject", function(x) {
 features <- read.table(file="UCI HAR Dataset/features.txt")
 i=2
 for (col in cols) {
-    colnames(out)[i] = as.character(features[col, 2])
+    colnames(out)[i] = paste(as.character(features[col, 2]), "Mean",sep = "-")
     i=1+i
 }
 
